@@ -1,25 +1,20 @@
-﻿using Microsoft.VisualBasic;
-using System.ComponentModel;
-using System.Xml.Linq;
+﻿using System;
+using System.Transactions;
 
-namespace ConsoleApp6
+class MainClass
 {
-    internal class Program
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            string MyName = "Stas";
-            byte Myage = 49;
-            bool HaveIApet = true;
-            double MуShoeSise = 42.5;
+        Console.Write("Enter eour name: ");
+        string name = Console.ReadLine();
+        
+        Console.Write("Enter your age:");
+        byte age = checked((byte) int.Parse(Console.ReadLine()));
 
+        Console.Write("What is favorite day of week? :");
+        DayOfWeek day = (DayOfWeek) int.Parse(Console.ReadLine()); 
 
-            Console.WriteLine("My name is" + MyName);
-            Console.WriteLine("Myage"+ Myage);
-            Console.WriteLine("Do I have a pet?"+ HaveIApet);
-            Console.WriteLine("My shoe size is"+ MуShoeSise);
-            
-            Console.ReadKey();
-        }
+        Console.WriteLine("Your name is {0} and age is {1} and Your favorite day is {2}", name, age, day);
+        Console.ReadKey();
     }
 }
