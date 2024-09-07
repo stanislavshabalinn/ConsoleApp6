@@ -1,34 +1,20 @@
 ﻿using System;
 
-class MainClass
+namespace FirstApp
 {
-    public static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-
-        var color = Console.ReadLine();
-
-        if (color == "red")
+        static void Main(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("Введите свое имя");
+            var name = Console.ReadLine();
 
-            Console.WriteLine("Your color is red!");
+            for (int i = name.Length - 1; i >= 0; i--)
+            { 
+                 Console.Write(name[i]+"");
+            }
+            Console.ReadLine();
         }
 
-        else if (color == "green")
-        {
-            Console.BackgroundColor = ConsoleColor.Green;
-            Console.ForegroundColor = ConsoleColor.Black;
-
-            Console.WriteLine("Your color is green!");
-        }
-        else
-        {
-            Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.ForegroundColor = ConsoleColor.Black;
-
-            Console.WriteLine("Your color is cyan!");
-        }
     }
 }
