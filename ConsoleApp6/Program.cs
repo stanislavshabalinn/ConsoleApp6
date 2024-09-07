@@ -4,14 +4,18 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
-        int sum = 0;
 
-        for (int i = 0; i < arr.Length; i++)
-        {
-            sum += arr[i];
-        }
+        (string name, int age) anketa;
 
-        Console.WriteLine(sum);
+        Console.Write("Введите имя: ");
+        anketa.name = Console.ReadLine();
+        Console.Write("Введите возраст с цифрами: ");
+        anketa.age = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Ваше имя: {0}", anketa.name);
+        Console.WriteLine("Ваш возраст: {0}", anketa.age);
+
+        Console.ReadKey();
+
     }
 }
