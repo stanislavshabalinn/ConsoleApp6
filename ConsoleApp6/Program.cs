@@ -21,5 +21,20 @@ class MainClass
         {
             Echo(phrase, deep - 1);
         }
+        static void Echo(String saidword, int deep)
+        {
+            var modif = saidword;
+            if (modif.Length > 2)
+            {
+                modif = modif.Remove(0, 2);
+                var d = modif.Length;
+                    Console.WriteLine("..." + modif);
+
+                if (d > 1)
+                {
+                    Echo(modif, d - 1);
+                }
+            }
+        }
     }
 }
