@@ -1,56 +1,56 @@
 ﻿using System;
+using System.Drawing;
 
 class MainClass
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Напишите что-то");
-        var str = Console.ReadLine();
-        
-        Console.WriteLine("Укажите глубину эха");
-        var deep = int.Parse(Console.ReadLine());
-
-        Echo(str, deep);
-
-        Console.ReadKey();
-        }
-        static void Echo(string phrase, int deep) { 
-            Console.WriteLine(phrase);
-
-        if (deep>1)
+        (string Name, string Lastname, int Age, bool HasPet, string[] colors) Enteruser;
         {
-            Echo(phrase, deep - 1);
-        }
-        static void Echo(string saidword, int deep)
-        {
-            var modif = saidword;
-            if (modif.Length > 2)
+            (string Name, string Lastname, int Age, bool HasPet, string[] colors) user;
+
+            Console.WriteLine("Введите свое имя");
+            user.Name = Console.ReadLine();
+
+            Console.WriteLine("Введите свою фамилию");
+            user.Lastname = Console.ReadLine();
+
+            bool validAge = false;
+            while (!validAge)
             {
-                modif = modif.Remove(0, 2);
-                var d = modif.Length;
-                    Console.WriteLine("..." + modif);
-
-                if (d > 1)
+                try
                 {
-                    Echo(modif, d - 1);
+                    Console.Write("Введите возраст: ");
+                    int Age = int.Parse(Console.ReadLine());
+                    validAge = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Ошибка: возраст должен быть целым числом.");
+                }
 
-                    static void Echo(string saidworld, int deep);
+                Console.WriteLine("Есть ли у вас животные? Да или нет");
+                var result = Console.ReadLine();
+                if (result == "Да")
+                {
+                    user.HasPet = true;
+                    Console.WriteLine("перечислите всех ваших домашних питомцев");
+
+                }
+                else
+                {
+                    user.HasPet = false;
+
+                    user.colors = new string[3];
+                    Console.WriteLine("Введите любимыe цвета");
+
+                    for (int i = 0; i < user.colors.Length; i++)
                     {
-                        var modif = saidword;
+                        user.colors[i] = Console.ReadLine();
 
-                        if (modif.Length > 2)
-                        {
-                            modif = modif.Remove(0, 2);
-                        }
-                        Console.BackgroundColor = (ConsoleColor)deep;
-                        Console.WriteLine("..." + modif);
-
-                        if (deep > 1)
-                        {
-                            Echo(modif, deep - 1);
-                        }
                     }
                 }
+                Console.WriteLine($"Вы ввели: Имя - {user.Name},Фамилия - {user.Lastname}, Возраст - {int.MinValue}, Домашние питомцы - {user.HasPet}, Любимые цвета -{0}");
             }
         }
     }
