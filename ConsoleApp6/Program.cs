@@ -2,21 +2,24 @@
 
 class MainClass
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
+        Console.WriteLine("Напишите что-то");
+        var str = Console.ReadLine();
+        
+        Console.WriteLine("Укажите глубину эха");
+        var deep = int.Parse(Console.ReadLine());
 
-        var (name, age) = ("Евгения", 27);
+        Echo(str, deep);
 
-        Console.WriteLine("Моё имя: {0}", name);
-        Console.WriteLine("Мой возраст: {0}", age);
+        Console.ReadKey();
+        }
+        static void Echo(string phrase, int deep) { 
+            Console.WriteLine(phrase);
 
-        Console.Write("Введите имя: ");
-        name = Console.ReadLine();
-        Console.Write("Введите возраст с цифрами:");
-        age = Convert.ToInt32(Console.ReadLine());
-
-        Console.WriteLine("Ваше имя: {0}", name);
-        Console.WriteLine("Ваш возраст: {0}", age);
-
+        if (deep>1)
+        {
+            Echo(phrase, deep - 1);
+        }
     }
 }
