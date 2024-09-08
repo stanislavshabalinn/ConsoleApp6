@@ -21,7 +21,7 @@ class MainClass
         {
             Echo(phrase, deep - 1);
         }
-        static void Echo(String saidword, int deep)
+        static void Echo(string saidword, int deep)
         {
             var modif = saidword;
             if (modif.Length > 2)
@@ -33,6 +33,23 @@ class MainClass
                 if (d > 1)
                 {
                     Echo(modif, d - 1);
+
+                    static void Echo(string saidworld, int deep);
+                    {
+                        var modif = saidword;
+
+                        if (modif.Length > 2)
+                        {
+                            modif = modif.Remove(0, 2);
+                        }
+                        Console.BackgroundColor = (ConsoleColor)deep;
+                        Console.WriteLine("..." + modif);
+
+                        if (deep > 1)
+                        {
+                            Echo(modif, deep - 1);
+                        }
+                    }
                 }
             }
         }
