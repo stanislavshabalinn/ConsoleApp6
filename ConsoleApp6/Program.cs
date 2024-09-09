@@ -52,7 +52,7 @@ class MainClass
             return (Name, Surname, Age, HavePet, Pets, PetNames, Colors, ColorsNames);
         }
 
-        static void ShowData(string Name, string Surname, int Age, bool HavePet, int Pets, string[] PetNames, int Colors, string[]ColorsNames)
+        static void ShowData(string Name, string Surname, int Age, bool HavePet, int Pets, string[] PetNames, int Colors, string[] ColorsNames)
         {
             Console.WriteLine(Name + " " + Surname);
             Console.WriteLine(Age);
@@ -63,7 +63,7 @@ class MainClass
                 Console.WriteLine(PetName);
                 
             }
-             Console.WriteLine(ColorsNames);
+          
         }
 
         static int Proverka()
